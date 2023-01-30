@@ -20,8 +20,8 @@ CREATE TABLE images (
   id SERIAL PRIMARY KEY,
   url VARCHAR NOT NULL,
   altText VARCHAR,
-  productId INT,
-  FOREIGN KEY (productId) REFERENCES products(id) NOT NULL
+  productId INT NOT NULL,
+  FOREIGN KEY (productId) REFERENCES products(id)
 );
 
 CREATE TABLE users (
@@ -65,107 +65,109 @@ CREATE TABLE orderItems (
 );
 
 INSERT INTO products
-    (title, category, price, numInStock, dimensions = null)
+    (title, category, price, numInStock, dimensions)
   VALUES
   (
     'Black Sheep Wallet 1', 
-    "accessories", 
+    'accessories', 
     40.00,
-    3
+    3,
+    null
   ),
   (
     'Black Sheep Wallet 2', 
-    "accessories", 
+    'accessories', 
     40.00,
-    5
+    5,
+    null
   ),
   (
     'Pink Frizz', 
-    "canvas", 
+    'canvas', 
     60.00,
     1,
     '11 x 14'
   ),
   (
     'Two-Faced Flower Child', 
-    "canvas", 
+    'canvas', 
     60.00,
     1,
     '11 x 14'
   ),
   (
     'Side Eye Blue', 
-    "canvas", 
+    'canvas', 
     60.00,
     1,
     '11 x 14'
   ),
   (
     'Incognito', 
-    "canvas", 
+    'canvas', 
     60.00,
     1,
     '11 x 14'
   ),
   (
-    "Cat's Meow", 
-    "canvas", 
+    'Cat''s Meow', 
+    'canvas', 
     60.00,
   1,
   '11 x 14'
   ),
   (
     'Radicool', 
-    "canvas", 
+    'canvas', 
     60.00,
     1,
     '11 x 14'
   ),
   (
     'Rawr', 
-    "canvas", 
+    'canvas', 
     60.00,
     1,
     '11 x 14'
   ),
   (
     'Monster Profile', 
-    "canvas", 
+    'canvas', 
     60.00,
     1,
     '11 x 14'
   ),
   (
     'French Kiss', 
-    "canvas", 
+    'canvas', 
     60.00,
     1,
     '11 x 14'
   ),
   (
     'Wynona', 
-    "canvas", 
+    'canvas', 
     60.00,
     1,
     '11 x 14'
   ),
   (
     'Big Red', 
-    "canvas", 
+    'canvas', 
     60.00,
     1,
     '11 x 14'
   ),
   (
     'Ginger', 
-    "canvas", 
+    'canvas', 
     60.00,
     1,
     '11 x 14'
   ),
   (
     'Hair Bouquet', 
-    "canvas", 
+    'canvas', 
     60.00,
     1,
     '11 x 14'
@@ -180,14 +182,15 @@ INSERT INTO products
     'kristymoore209',
     'kristymoore209@gmail.com',
     '$2y$12$eSZ7ih2im/HcvdWEgVEcsOgyORDAYU7SzDimfXZUwqqzypVdUwHqi',
-    TRUE
+    true
+  ),
   (
     'Trisha', 
     'Johnson',
     'trishajjohnson',
     'trishajjohnson@gmail.com',
     '$2y$12$eSZ7ih2im/HcvdWEgVEcsOgyORDAYU7SzDimfXZUwqqzypVdUwHqi',
-    FALSE
+    false
   );
 
   INSERT INTO images
@@ -256,12 +259,12 @@ INSERT INTO products
   (
     'https://eojassets.s3.us-west-1.amazonaws.com/canvas5-1.png', 
     7,  
-    "Cat's Meow on canvas image 1"
+    'Cat''s Meow on canvas image 1'
   ),
   (
     'https://eojassets.s3.us-west-1.amazonaws.com/canvas5-2.png', 
     7,  
-    "Cat's Meow on canvas image 2"
+    'Cat''s Meow on canvas image 2'
   ),
   (
     'https://eojassets.s3.us-west-1.amazonaws.com/canvas6-1.png', 
